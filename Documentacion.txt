@@ -1,64 +1,43 @@
-1.para activar entorno virutal
+Iniciar la API
+Con el entorno virtual activado, inicia el servidor FastAPI con:
 
-.\ApiRes\Scripts\Activate.ps1
+fastapi dev main.py
 
+Endpoints disponibles
 
-2.para desactivar una vez dentro
-
-deactivate
-
-3.Para iniciar la api es colocando fastapi dev main.py en el terminal despues de iniciar el entorno virtual
-
-4. fastapi dev main.py
----------------------------------------------
-
-1- Crear un pedido.
-
-Método: POST
- http://127.0.0.1:8000/pedidos/
-Cuerpo: raw y JSON
-
+1. Crear un pedido  
+- Metodo:POST  
+- URL: https://studious-space-invention-5g4xj4pj4g5x2p7x4-8000.app.github.dev/pedidos/  
+- Cuerpo (JSON):
 {
   "id_pedido": 1,
   "nombre_cliente": "Juan Pérez",
   "items": ["item1", "item2", "item3"],
   "estado": "pendiente",
-  "ubicacion_bodega": "bodegaA"
+  "ubicacion_bodega": "Bodega"
 }
 
-2- Leer un Pedido por ID
+2. Leer un pedido por ID  
+- Metodoo: GET  
+- URL: https://studious-space-invention-5g4xj4pj4g5x2p7x4-8000.app.github.dev/pedidos/1
 
-Método: GET
-http://127.0.0.1:8000/pedidos/1
-
-
-
-3- Actualizar el Estado de un Pedido
-
-Método: PUT
-http://127.0.0.1:8000/pedidos/1/estado/
-Cuerpo: raw y JSON
-
+3. Actualizar el estado de un pedido  
+- Metodo: PUT  
+- URL: https://studious-space-invention-5g4xj4pj4g5x2p7x4-8000.app.github.dev/pedidos/1/estado/  
+- Cuerpo (JSON):
 {
   "id_pedido": 1,
   "nuevo_estado": "enviado"
 }
 
-
-
-4. Revisar lugares de los productos
-
-GET
-
-http://127.0.0.1:8000/bodegas/
-
+4. Revisar lugares de los productos (bodegas)  
+- Método: GET  
+- URL: https://studious-space-invention-5g4xj4pj4g5x2p7x4-8000.app.github.dev/bodegas/  
+- Respuesta esperada:
 [
-    "bodegaA"
+    "bodega"
 ]
 
-
-5. Ver lista de productos en el lugar 
-
-GET
-
-http://127.0.0.1:8000/bodegas/"bodegaA"
+5. Ver lista de productos en un lugar específico  
+- Metodo: GET  
+- URL: https://studious-space-invention-5g4xj4pj4g5x2p7x4-8000.app.github.dev/bodegas/"bodega"
