@@ -1,0 +1,64 @@
+1.para activar entorno virutal
+
+.\ApiRes\Scripts\Activate.ps1
+
+
+2.para desactivar una vez dentro
+
+deactivate
+
+3.Para iniciar la api es colocando fastapi dev main.py en el terminal despues de iniciar el entorno virtual
+
+4. fastapi dev main.py
+---------------------------------------------
+
+1- Crear un pedido.
+
+Método: POST
+ http://127.0.0.1:8000/pedidos/
+Cuerpo: raw y JSON
+
+{
+  "id_pedido": 1,
+  "nombre_cliente": "Juan Pérez",
+  "items": ["item1", "item2", "item3"],
+  "estado": "pendiente",
+  "ubicacion_bodega": "bodegaA"
+}
+
+2- Leer un Pedido por ID
+
+Método: GET
+http://127.0.0.1:8000/pedidos/1
+
+
+
+3- Actualizar el Estado de un Pedido
+
+Método: PUT
+http://127.0.0.1:8000/pedidos/1/estado/
+Cuerpo: raw y JSON
+
+{
+  "id_pedido": 1,
+  "nuevo_estado": "enviado"
+}
+
+
+
+4. Revisar lugares de los productos
+
+GET
+
+http://127.0.0.1:8000/bodegas/
+
+[
+    "bodegaA"
+]
+
+
+5. Ver lista de productos en el lugar 
+
+GET
+
+http://127.0.0.1:8000/bodegas/"bodegaA"
