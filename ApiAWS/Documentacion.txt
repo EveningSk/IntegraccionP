@@ -1,0 +1,59 @@
+1-Primero iniciar el entorno virtual.
+seguiremos la siguiente ruta para activar el entorno virtual.
+
+cd C:\Users\EQUIPO\Downloads\IntegraccionAWS\.venv\Scripts
+
+2- una vez en la ruta, colocar .\activate
+
+
+3-una vez activado ir a la siguiente ruta.
+
+cd C:\Users\N19ht\Downloads\IntegraccionAWS\ApiAWS
+
+4. una vez en la ruta ejecutaremos el siguiente comando.
+
+fastapi dev main.py
+
+
+==============================
+Endpoints disponibles
+
+
+VER LISTA http://127.0.0.1:8000/api/pedidos/
+
+1. Crear un pedido  
+- Metodo:POST  
+- URL: http://127.0.0.1:8000/api/pedidos/
+- Cuerpo (JSON):
+{
+  "id_pedido": 1,
+  "nombre_cliente": "Juan Pérez",
+  "items": ["item1", "item2", "item3"],
+  "estado": "pendiente",
+  "ubicacion_bodega": "Bodega"
+}
+
+2. Leer un pedido por ID  
+- Metodoo: GET  
+- URL: http://127.0.0.1:8000/api/pedidos/1
+
+3. Actualizar el estado de un pedido  
+- Metodo: PUT  
+- URL: http://127.0.0.1:8000/api/pedidos/1/estado/  
+- Cuerpo (JSON):
+{
+  "id_pedido": 1,
+  "nuevo_estado": "enviado"
+}
+
+4. Revisar lugares de los productos (bodegas)  
+- Método: GET  
+- URL: http://127.0.0.1:8000/api/bodegas/ 
+- Respuesta esperada:
+[
+    "bodega"
+]
+
+5. Ver lista de productos en un lugar específico  
+- Metodo: GET  
+- URL: http://127.0.0.1:8000/api/bodegas/Bodega
